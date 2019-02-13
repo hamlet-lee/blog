@@ -1,0 +1,15 @@
+# Tomcat 上传文件失败
+参考： https://blog.csdn.net/fragrant_no1/article/details/83412742
+
+```java
+/**
+ * 文件上传临时路径
+ * 在Spring Boot下配置location，可以在main()方法所在文件中添加如下代码：
+ */
+ @Bean
+ MultipartConfigElement multipartConfigElement() {
+    MultipartConfigFactory factory = new MultipartConfigFactory();
+    factory.setLocation("data/tmp");
+    return factory.createMultipartConfig();
+}
+```
